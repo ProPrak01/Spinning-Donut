@@ -130,9 +130,13 @@ void animation(std::vector<std::tuple<float, float, float>> points, int width, i
         // Print the grid to the terminal
         printGrid(grid, width, height);
 
-        theta += M_PI / 90.0f; // Increase theta increment for faster rotation
+        if (theta > 2 * M_PI)
+        {
+            theta = 0;
+        }
+        theta += (0.01) * M_PI / 90.0f;
 
-        std::this_thread::sleep_for(std::chrono::milliseconds(400));
+        std::this_thread::sleep_for(std::chrono::milliseconds(100));
     }
 }
 
