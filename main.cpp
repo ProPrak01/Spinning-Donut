@@ -174,10 +174,8 @@ int main()
         }
     }
 
-    // Uncomment this line to start the animation
     animation(points, width, height, grid);
 
-    // Clean up
     for (int i = 0; i < height; ++i)
     {
         delete[] grid[i];
